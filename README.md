@@ -32,5 +32,11 @@ I am using an if else statement (Control Structures and Logic - 1) to add a comp
 
 I am using the do-while loop (Working With Loops - 3) to ensure that user inputs are within the 1-3 Tic-Tac-Toe grid parameters.
 
-○ Building Arrays ○ Using Arrays 
+○ Building Arrays 
+
 I built a multi-dimensional array (Building Arrays - 4) to represent the Tic-Tac-Toe grid.
+
+○ Using Arrays 
+
+I am using dynamic indexing (Using Arrays - 1) to use variables instead of hard-coded indexes.This allows me to assign user input to a specific spot on the Tic Tac Toe grid.
+
