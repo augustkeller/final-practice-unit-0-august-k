@@ -38,5 +38,5 @@ I built a multi-dimensional array (Building Arrays - 4) to represent the Tic-Tac
 
 ○ Using Arrays 
 
-I am using dynamic indexing (Using Arrays - 1) to use variables instead of hard-coded indexes.This allows me to assign user input to a specific spot on the Tic Tac Toe grid.
+I am using dynamic indexing (Using Arrays - 1) to use variables instead of hard-coded indexes. This allows me to assign user input to a specific spot on the Tic Tac Toe grid.
 
