@@ -4,35 +4,26 @@ const input = require('readline-sync');
 let isGameOver = false;
 
 let ticTacToeGrid = [
-    ["_", "_", "_"],
-    ["_", "_", "_"],
-    ["_", "_", "_"]
+  "_", "_", "_",
+  "_", "_", "_",
+  "_", "_", "_"
  ];
-let rowOne = ticTacToeGrid[0];
-let rowTwo = ticTacToeGrid[1];
-let rowThree = ticTacToeGrid[2];
 
 //Player 1 Functions
 function playerOneSelection() {
-do {
-    rowSelection = input.question('Pick a row (1, 2, or 3). ');
-} while (!(rowSelection === "1" || rowSelection === "2" || rowSelection === "3"));
-console.log("Row selected.");
+  do {
+      spotSelection = input.question('Pick a spot (1 thru 9). ');
+  } while (!(spotSelection === "1" || spotSelection === "2" || spotSelection === "3" || spotSelection === "4" || spotSelection === "5" || spotSelection === "6" || spotSelection === "7" || spotSelection === "8" || spotSelection === "9"));
+  console.log("Spot selected.");
 
-do {
-    columnSelection = input.question('Pick a column (1, 2, or 3). ');
-} while (!(columnSelection === "1" || columnSelection === "2" || columnSelection === "3"));
-console.log("Column selected.");
+  let spotSelectionNum = (Number(spotSelection) - 1);
 
-let rowSelectionNum = (Number(rowSelection) - 1);
-let columnSelectionNum = (Number(columnSelection) - 1);
-
-if (ticTacToeGrid[rowSelectionNum][columnSelectionNum] !== "_") {
-    console.log("Spot Unavailable. Please select an available spot.");
-    return playerOneSelection();
-} else {
-ticTacToeGrid[rowSelectionNum][columnSelectionNum] = "X";
-}
+  if (ticTacToeGrid[spotSelectionNum] !== "_") {
+      console.log("Spot Unavailable. Please select an available spot.");
+      return playerOneSelection();
+  } else {
+  ticTacToeGrid[spotSelectionNum] = "X";
+  }
 };
 
 function playerOneTurn(num) {
@@ -42,9 +33,7 @@ console.log(stars.repeat(turnAnnouncement.length))
 console.log(turnAnnouncement)
 console.log(stars.repeat(turnAnnouncement.length))
 playerOneSelection()
-console.log(rowOne);
-console.log(rowTwo);
-console.log(rowThree);
+console.log(ticTacToeGrid);
 };
 
 //Player 2 Functions
@@ -77,9 +66,7 @@ console.log(stars.repeat(turnAnnouncement.length))
 console.log(turnAnnouncement)
 console.log(stars.repeat(turnAnnouncement.length))
 playerTwoSelection()
-console.log(rowOne);
-console.log(rowTwo);
-console.log(rowThree);
+console.log(ticTacToeGrid);;
 };
 
 //Computer Functions
@@ -101,9 +88,7 @@ console.log(stars.repeat(turnAnnouncement.length))
 console.log(turnAnnouncement)
 console.log(stars.repeat(turnAnnouncement.length))
 computerSelection()
-console.log(rowOne);
-console.log(rowTwo);
-console.log(rowThree);
+console.log(ticTacToeGrid);
 };
 
 //Validate Win
@@ -130,7 +115,7 @@ function winValidation() {
             isGameOver = true;
             console.log(`${opponentName.toUpperCase()} WINS!!`);
     }
-    else if (!(rowOne.includes("_") || rowTwo.includes("_") || rowThree.includes("_"))) {
+    else if (!(ticTacToeGrid.includes("_"))) {
         isGameOver = true;
         console.log("TIE!");
     }
